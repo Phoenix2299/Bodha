@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BODHA — Your Learning Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">B</div>
+      <div><div class="brand-name">BODHA</div><div id="tagline" class="tagline">Your Learning Buddy</div></div>
+    </div>
+    <div class="language" aria-label="Language selection">
+      <button class="lang active" data-lang="en">English</button>
+      <button class="lang" data-lang="te">తెలుగు</button>
+      <button class="lang" data-lang="hy">Hybrid</button>
+    </div>
+  </header>
+
+  <section id="screen-home" class="screen">
+    <div class="hero">
+      <div class="bot">🤖</div>
+      <p id="homeEyebrow" class="eyebrow">CLASS 8 • MATHEMATICS • SEMESTER 1</p>
+      <h1 id="homeTitle">Let's understand mathematics,<br>not just memorize it.</h1>
+      <p id="homeIntro" class="intro">BODHA will first understand what you already know — then guide your learning.</p>
+      <button id="startBtn" class="primary">Meet BODHA →</button>
+    </div>
+  </section>
+
+
+  <section id="screen-account" class="screen hidden">
+    <div class="narrow account-card">
+      <div class="bot small">🎓</div>
+      <p id="accountEyebrow" class="eyebrow">BODHA STUDENT PROFILE</p>
+      <h2 id="accountTitle">Create your student profile</h2>
+      <p id="accountIntro" class="large-text">This prototype saves your learning journey on this device.</p>
+      <label id="accountNameLabel" for="studentName">Student name</label>
+      <input id="studentName" class="text-input" type="text" autocomplete="name" placeholder="Enter your name">
+      <label id="accountGradeLabel" for="studentGrade">Class</label>
+      <select id="studentGrade" class="text-input"><option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option></select>
+      <div id="accountError" class="form-error"></div>
+      <button id="accountContinue" class="primary">Continue to BODHA →</button>
+      <p id="accountNote" class="storage-note"></p>
+    </div>
+  </section>
+
+  <section id="screen-dashboard" class="screen hidden">
+    <div class="dashboard-wrap">
+      <div class="dashboard-head">
+        <div><p id="dashEyebrow" class="eyebrow">BODHA STUDENT DASHBOARD</p><h2 id="dashGreeting">Hi!</h2><p id="dashSubtitle" class="large-text"></p></div>
+        <button id="dashHome" class="secondary-btn">Profile</button>
+      </div>
+      <div class="dashboard-card hero-dash"><div><span id="dashCurrentLearning" class="eyebrow">CURRENT LEARNING</span><h3 id="dashChapter"></h3><p id="dashStage"></p><p id="dashNextText" class="large-text"></p></div><button id="dashStart" class="primary">Start My BODHA Journey →</button></div>
+      <div class="dashboard-stats">
+        <div class="stat-card"><span id="dashDiagnosisLabel">DIAGNOSIS</span><strong id="dashDiagScore">—</strong><small id="dashDiagnosisNote">Initial evidence</small></div>
+        <div class="stat-card"><span id="dashFocusLabel">FOCUS SKILL</span><strong id="dashTarget">—</strong><small id="dashFocusNote">BODHA learning path</small></div>
+        <div class="stat-card"><span id="dashEventsLabel">LEARNING EVENTS</span><strong id="dashEvents">0</strong><small id="dashEventsNote">Saved on this device</small></div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dashboard-card"><div class="card-title-row"><h3 id="dashMapTitle">My Learning Map</h3><span id="dashMapBadge">Evidence</span></div><div id="dashSkillMap"></div></div>
+        <div class="dashboard-card"><div class="card-title-row"><h3 id="dashJourneyTitle">My Learning Journey</h3><span id="dashJourneyBadge">Path</span></div><div id="dashJourney" class="journey"></div></div>
+      </div>
+      <div class="dashboard-card privacy-card"><strong id="dashBoundaryTitle">Prototype data boundary</strong><p id="dashDataNote"></p><p id="dashBoundaryText">This version uses local browser storage only. It is not a production authentication system or cloud student database.</p><button id="dashClear" class="text-btn">Reset prototype student data</button></div>
+    </div>
+  </section>
+
+  <section id="screen-welcome" class="screen hidden">
+    <div class="narrow">
+      <div class="bot small">👋</div>
+      <p id="welcomeEyebrow" class="eyebrow">YOUR FIRST BODHA SESSION</p>
+      <h2 id="welcomeTitle">Hi! I'm BODHA.</h2>
+      <p id="welcomeText" class="large-text">Before I teach Chapter 2, I want to understand what you already know.</p>
+      <div class="promise">
+        <span>💡</span>
+        <div><strong id="promiseTitle">No marks. No pressure.</strong><br><span id="promiseText">Your mistakes help me decide how to teach you.</span></div>
+      </div>
+      <button id="beginDiagnostic" class="primary">Let's Begin →</button>
+    </div>
+  </section>
+
+  <section id="screen-diagnostic" class="screen hidden">
+    <div class="diagnostic-head">
+      <div>
+        <p id="diagEyebrow" class="eyebrow">BODHA DIAGNOSTIC</p>
+        <h2 id="diagTitle">Let's see what you know.</h2>
+      </div>
+      <div class="question-count" id="questionCount">1 / 8</div>
+    </div>
+    <div class="progress"><div id="diagBar"></div></div>
+
+    <div class="question-card">
+      <div class="skill-pill" id="skillPill"></div>
+      <h3 id="questionText"></h3>
+      <div id="options" class="options"></div>
+      <div id="diagFeedback" class="feedback hidden"></div>
+      <button id="nextQuestion" class="primary hidden">Continue →</button>
+    </div>
+  </section>
+
+  <section id="screen-analysis" class="screen hidden">
+    <div class="narrow analysis-wrap">
+      <p id="analysisEyebrow" class="eyebrow">YOUR BODHA ANALYSIS</p>
+      <h2 id="analysisTitle">Now I know how to help you.</h2>
+      <p id="analysisIntro" class="large-text"></p>
+
+      <div class="analysis-score-card">
+        <div>
+          <span id="analysisScoreLabel" class="analysis-label">Diagnostic score</span>
+          <div class="analysis-score"><span id="analysisScore">0</span><span class="analysis-slash"> / </span><span id="analysisTotal">8</span></div>
+        </div>
+        <div class="analysis-score-note"><span id="analysisScoreNote">BODHA uses this to personalise your next lesson.</span></div>
+      </div>
+
+      <div class="analysis-section">
+        <h3 id="analysisStrengthsTitle">What you're doing well</h3>
+        <div id="analysisStrengths" class="analysis-list"></div>
+      </div>
+
+      <div class="analysis-section">
+        <h3 id="analysisDevelopingTitle">Skills to strengthen</h3>
+        <div id="analysisDeveloping" class="analysis-list"></div>
+      </div>
+
+      <div class="analysis-section">
+        <h3 id="analysisSupportTitle">Skills that need more support</h3>
+        <div id="analysisSupport" class="analysis-list"></div>
+      </div>
+
+      <div class="analysis-section diagnosis-section">
+        <h3 id="diagnosisTitle">What BODHA found</h3>
+        <p id="diagnosisIntro" class="analysis-section-intro">BODHA looks at what you can already do, where you are getting stuck, and how much evidence it has before choosing your learning path.</p>
+        <div id="diagnosisDetails" class="diagnosis-grid"></div>
+      </div>
+
+      <div class="next-step analysis-recommendation">
+        <div class="next-icon">🎯</div>
+        <div><strong id="analysisRecommendationTitle">BODHA's recommendation</strong><p id="analysisRecommendation"></p><div class="target-skill"><span id="analysisTargetLabel">BODHA will focus on</span>: <strong id="analysisTargetSkill"></strong></div></div>
+      </div>
+
+      <button id="analysisContinue" class="primary">Continue to my Learning Path →</button>
+    </div>
+  </section>
+
+  <section id="screen-results" class="screen hidden">
+    <div class="narrow">
+      <div class="bot small">🧠</div>
+      <p id="mapEyebrow" class="eyebrow">YOUR BODHA LEARNING MAP</p>
+      <h2 id="mapTitle">I know where to start.</h2>
+      <p id="resultTitle" class="large-text"></p>
+      <p id="resultSummary" class="large-text"></p>
+
+      <div id="skillMap" class="skill-map"></div>
+
+      <div class="target-skill"><span id="learningTargetLabel">BODHA will focus on</span>: <strong id="learningTargetSkill"></strong></div>
+
+      <div class="next-step">
+        <div class="next-icon">🎯</div>
+        <div>
+          <strong id="nextHeading"></strong>
+          <p id="nextDescription"></p>
+        </div>
+      </div>
+
+      <button id="startLearning" class="primary">Start My Learning Path →</button>
+    </div>
+  </section>
+
+  <section id="screen-lesson" class="screen hidden">
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="lessonProgressLabel">Chapter 2 • Personalised Lesson</span><span id="lessonProgressText">1 / 1</span></div>
+      <div class="progress"><div id="lessonProgressBar"></div></div>
+    </div>
+    <div class="lesson-card">
+      <p class="eyebrow" id="lessonSection"></p>
+      <div class="skill-pill" id="lessonTarget"></div>
+      <h2 id="lessonTitle"></h2>
+      <div id="lessonBody" class="lesson-body"></div>
+      <div id="lessonInteraction"></div>
+    </div>
+    <div id="lessonFeedback" class="feedback hidden"></div>
+    <button id="lessonNext" class="primary hidden">Continue →</button>
+  </section>
+
+  <section id="screen-practice" class="screen hidden">
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="practiceProgressLabel">BODHA Practice</span><span id="practiceProgressText">1 / 10</span></div>
+      <div class="progress"><div id="practiceProgressBar"></div></div>
+    </div>
+    <div class="practice-meta"><span id="practiceDifficulty" class="difficulty-badge">Level 1 • Foundation</span><span id="practiceStreak">0 correct</span></div>
+    <div class="lesson-card">
+      <p class="eyebrow" id="practiceEyebrow"></p>
+      <div class="skill-pill" id="practiceSkill"></div>
+      <h2 id="practiceQuestion"></h2>
+      <div id="practiceOptions" class="options"></div>
+      <div id="practiceFeedback" class="feedback hidden"></div>
+      <div id="practiceHint" class="hint hidden"></div>
+      <button id="practiceAction" class="primary">Check →</button>
+    </div>
+  </section>
+
+  <section id="screen-practice-summary" class="screen hidden">
+    <div class="narrow">
+      <div class="bot small">🏆</div>
+      <p class="eyebrow" id="practiceSummaryEyebrow">YOUR PRACTICE RESULT</p>
+      <h2 id="practiceSummaryTitle">Practice complete!</h2>
+      <p id="practiceSummaryIntro" class="large-text"></p>
+      <div class="analysis-score-card">
+        <div><span class="analysis-label" id="practiceSummaryScoreLabel">Practice score</span><div class="analysis-score"><span id="practiceSummaryScore">0</span><span class="analysis-slash"> / </span><span id="practiceSummaryTotal">10</span></div></div>
+        <div class="analysis-score-note" id="practiceSummaryNote"></div>
+      </div>
+      <div class="next-step"><div class="next-icon">🧠</div><div><strong id="practiceNextTitle"></strong><p id="practiceNextText"></p></div></div>
+      <button id="practiceFinish" class="primary">Continue →</button>
+    </div>
+  </section>
+
+  <footer id="footer">UNDERSTAND • PRACTICE • MASTER</footer>
+</main>
+<script src="content/chapter2.js"></script>
+<script src="app.js?v=0.7.2"></script>
+<script src="v0_6_evidence_engine.js?v=0.6.5"></script>
+<script src="diagnostic_navigation_patch.js?v=0.6.5"></script>
+<script src="v0_6_8_diagnostic_intelligence_patch.js?v=0.6.8"></script>
+<script src="v0_6_9_final_diagnosis_bridge.js?v=0.6.9"></script>
+<script src="v0_6_11_learning_map_final_bridge.js?v=0.6.11"></script>
+<script src="v0_6_13_practice_language_bridge.js?v=0.6.13"></script>
+<script src="v0_7_dashboard.js?v=0.7.3"></script>
+<script src="v0_7_3_dashboard_language.js?v=0.7.3"></script>
+<script src="v0_7_1_language_controller.js?v=0.7.5"></script>
+<script src="v0_7_4_stabilization.js?v=0.7.4"></script>
+<script src="v0_7_5_final_state_bridge.js?v=0.7.5"></script>
+  <script src="v0_7_6_dashboard_profile_bridge.js?v=0.7.6"></script>
+</body>
+</html>

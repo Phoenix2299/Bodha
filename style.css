@@ -1,0 +1,64 @@
+*{box-sizing:border-box}
+:root{--blue:#1657b7;--deep:#102b57;--green:#16a085;--orange:#f59e0b;--light:#f4f8ff;--text:#20304a;--muted:#65758b;--line:#e3eaf4}
+body{margin:0;min-height:100vh;font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#eef6ff,#fffaf0);color:var(--text)}
+button{font:inherit;cursor:pointer}
+.app{width:min(1000px,94%);margin:24px auto;min-height:calc(100vh - 48px);background:#fff;border-radius:28px;box-shadow:0 20px 60px rgba(16,43,87,.12);overflow:hidden}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid #e8eef7}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-size:25px;font-weight:800}.brand-name{font-size:22px;font-weight:900;letter-spacing:2px;color:var(--deep)}.tagline{font-size:12px;color:var(--muted)}
+.language{display:flex;gap:6px}.lang{border:1px solid #dbe4f0;background:#fff;color:var(--muted);border-radius:999px;padding:8px 12px}.lang.active{background:var(--deep);color:#fff}
+.screen{padding:50px 7%}.hidden{display:none!important}.hero{text-align:center;max-width:760px;margin:40px auto 80px}.bot{width:100px;height:100px;margin:0 auto 22px;display:grid;place-items:center;border-radius:30px;background:#eef6ff;font-size:55px}.bot.small{width:80px;height:80px;font-size:42px}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.7px;margin-bottom:10px}h1{font-size:clamp(32px,5vw,54px);line-height:1.08;margin:10px 0 18px;color:var(--deep)}h2{font-size:clamp(28px,4vw,42px);margin:8px 0 22px;color:var(--deep)}h3{font-size:25px;line-height:1.35;margin:15px 0 25px;color:var(--deep)}
+.intro,.large-text{color:var(--muted);font-size:18px;line-height:1.65}.narrow{max-width:700px;margin:30px auto 60px}
+.primary{margin-top:22px;border:0;border-radius:14px;padding:14px 22px;background:var(--blue);color:#fff;font-weight:800;box-shadow:0 8px 20px rgba(22,87,183,.22)}.primary:hover{transform:translateY(-1px)}
+.promise{display:flex;gap:14px;text-align:left;margin:25px 0;padding:18px;border-radius:18px;background:#fff8e8;border:1px solid #fde3a7;line-height:1.5}.promise span{font-size:28px}
+.progress{height:9px;background:#e8eef7;border-radius:99px;overflow:hidden}.progress>div{height:100%;width:12.5%;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .3s}
+.diagnostic-head{display:flex;justify-content:space-between;align-items:end;max-width:760px;margin:auto}.question-count{font-weight:800;color:var(--muted);margin-bottom:22px}.diagnostic-head+.progress{max-width:760px;margin:0 auto 25px}
+.question-card{max-width:760px;margin:auto;padding:32px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#fff,#fbfdff)}.skill-pill{display:inline-block;padding:7px 11px;border-radius:999px;background:#eef6ff;color:var(--blue);font-size:12px;font-weight:800}
+.options{display:grid;gap:12px}.option{border:1px solid #d7e1ee;background:#fff;border-radius:14px;padding:15px 18px;text-align:left;color:var(--text);transition:.2s}.option:hover{border-color:var(--blue);background:#f7fbff}.option.selected{border-color:var(--blue);background:#edf5ff}.option.correct{border-color:#20a37a;background:#e9f8f3}.option.wrong{border-color:#e0a53c;background:#fff5df}.option:disabled{cursor:default}
+.feedback{max-width:760px;margin:16px auto 0;padding:18px;border-radius:16px;font-weight:700}.feedback.good{background:#e8f8f3;color:#08775f}.feedback.try{background:#fff4df;color:#8a5a00}.feedback.info{background:#eef6ff;color:#174b91}
+.skill-map{display:grid;gap:12px;margin:25px 0}.skill-row{display:grid;grid-template-columns:1fr 120px 90px;align-items:center;gap:12px;padding:15px 17px;border:1px solid var(--line);border-radius:15px}.meter{height:8px;background:#e8eef7;border-radius:99px;overflow:hidden}.meter>span{display:block;height:100%;border-radius:99px}.status{font-size:12px;font-weight:800;text-align:right}.strong{color:#08775f}.developing{color:#a36a00}.support{color:#a94b37}
+.next-step{display:flex;gap:15px;align-items:flex-start;padding:20px;border-radius:20px;background:#f4f8ff;border:1px solid #dce8f8}.next-icon{font-size:30px}.next-step strong{color:var(--deep)}.next-step p{margin:6px 0 0;color:var(--muted);line-height:1.5}
+.lesson-card{max-width:760px;margin:auto;padding:34px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,#fff,#fbfdff)}.lesson-body{font-size:18px;line-height:1.7}.example{margin:22px 0;padding:20px;border-radius:18px;background:var(--light);font-size:27px;text-align:center;font-weight:800;color:var(--deep)}.question{margin-top:24px;padding:22px;border-radius:18px;background:#fff8e8;border:1px solid #fde3a7}.answer-row{display:flex;gap:10px;margin-top:14px}.answer-row input{flex:1;padding:13px 15px;border:1px solid #cbd7e6;border-radius:12px;font-size:18px}.check{border:0;border-radius:12px;padding:12px 18px;background:var(--green);color:#fff;font-weight:800}.progress-wrap{max-width:760px;margin:0 auto 25px}.progress-label{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:8px}
+footer{text-align:center;padding:20px;color:#8090a5;font-size:11px;letter-spacing:2px}
+@media(max-width:650px){.topbar{flex-direction:column;gap:14px;align-items:flex-start}.screen{padding:30px 5%}.question-card,.lesson-card{padding:24px}.skill-row{grid-template-columns:1fr 70px 75px}.answer-row{flex-direction:column}}
+
+/* BODHA v0.3.1 — diagnostic analysis */
+.analysis-wrap { padding-bottom: 32px; }
+.analysis-score-card { display:flex; align-items:center; justify-content:space-between; gap:24px; margin:22px 0; padding:22px 24px; border:1px solid #dbe5f2; border-radius:18px; background:linear-gradient(135deg,#f8fbff,#f3fbf8); }
+.analysis-label { display:block; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:#63748a; font-weight:700; margin-bottom:5px; }
+.analysis-score { font-size:40px; line-height:1; font-weight:800; color:#0b326b; }
+.analysis-slash { color:#9aa8b8; font-weight:500; }
+.analysis-score-note { max-width:270px; color:#53657a; font-size:14px; line-height:1.5; }
+.analysis-section { margin:24px 0; }
+.analysis-section h3 { margin:0 0 10px; color:#0b326b; font-size:18px; }
+.analysis-list { display:grid; gap:8px; }
+.analysis-skill { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 14px; border:1px solid #dbe5f2; border-radius:12px; background:#fff; font-size:14px; }
+.analysis-empty { padding:13px 14px; border-radius:12px; background:#f7f9fc; color:#65758a; font-size:14px; line-height:1.5; }
+.analysis-recommendation { margin-top:26px; }
+@media (max-width:640px){ .analysis-score-card{align-items:flex-start; flex-direction:column;} .analysis-score-note{max-width:none;} }
+
+.target-skill{margin-top:10px;padding:10px 12px;border-radius:12px;background:#f5f7fb;font-size:.92rem}.target-skill strong{font-weight:700}.lesson-card .skill-pill{display:inline-block;margin-bottom:12px}
+
+.practice-meta{max-width:760px;margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;font-weight:700}.difficulty-badge{padding:7px 11px;border-radius:999px;background:#eef6ff;color:var(--blue)}.hint{max-width:760px;margin:12px auto 0;padding:14px 16px;border-radius:14px;background:#f4f8ff;border:1px solid #dce8f8;color:#174b91;font-weight:600;line-height:1.5}.practice-meta + .lesson-card{margin-top:0}@media(max-width:650px){.practice-meta{align-items:flex-start;gap:10px;flex-direction:column}}
+
+
+/* BODHA v0.6.3 — evidence-based initial diagnosis */
+.analysis-section-intro{margin:-2px 0 14px;color:var(--muted);font-size:14px;line-height:1.55}
+.diagnosis-grid{display:grid;gap:12px}
+.diagnosis-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px 17px;box-shadow:0 2px 8px rgba(16,43,87,.03)}
+.diagnosis-card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:9px}
+.diagnosis-card-title{font-weight:800;color:var(--deep)}
+.diagnosis-status{font-size:11px;font-weight:800;padding:6px 9px;border-radius:999px;white-space:nowrap}
+.diagnosis-status.strong{background:#e8f8f3;color:#08775f}
+.diagnosis-status.developing{background:#fff4df;color:#8a5a00}
+.diagnosis-status.support{background:#fff0ed;color:#a94b37}
+.diagnosis-status.early{background:#f1f4f8;color:#63748a}
+.diagnosis-line{margin:6px 0;color:#53657a;font-size:13px;line-height:1.5}
+.diagnosis-line strong{color:var(--deep)}
+.diagnosis-evidence{display:inline-block;margin-top:7px;padding:5px 8px;border-radius:8px;background:#f5f7fb;color:#63748a;font-size:12px;font-weight:700}
+.diagnosis-confidence{font-size:12px;color:#63748a;margin-top:8px}
+@media(max-width:640px){.diagnosis-card-head{align-items:flex-start;flex-direction:column;gap:7px}.diagnosis-status{white-space:normal}}
+
+/* v0.7 student account + dashboard */
+.account-card{max-width:560px;margin:40px auto}.account-card label{display:block;margin:18px 0 7px;font-weight:700}.text-input{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #d9dee8;border-radius:12px;background:#fff;font-size:16px;outline:none}.text-input:focus{border-color:#5b6ee1;box-shadow:0 0 0 3px rgba(91,110,225,.12)}.form-error{min-height:22px;color:#b42318;margin:8px 0}.storage-note{font-size:12px;color:#667085;margin-top:14px}.dashboard-wrap{max-width:1080px;margin:0 auto;padding:30px 18px 70px}.dashboard-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:22px}.dashboard-head h2{margin:4px 0 6px;font-size:34px}.secondary-btn,.text-btn{border:1px solid #d9dee8;background:#fff;border-radius:10px;padding:10px 14px;cursor:pointer}.dashboard-card{background:#fff;border:1px solid #e7eaf0;border-radius:18px;padding:22px;box-shadow:0 8px 25px rgba(16,24,40,.05);margin-bottom:18px}.hero-dash{display:flex;justify-content:space-between;align-items:center;gap:20px}.hero-dash h3{font-size:24px;margin:7px 0}.hero-dash p{margin:0;color:#667085}.dashboard-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}.stat-card{background:#f8f9fc;border:1px solid #eaecf0;border-radius:15px;padding:18px}.stat-card span{font-size:11px;font-weight:800;color:#667085;letter-spacing:.06em}.stat-card strong{display:block;font-size:22px;margin:8px 0;word-break:break-word}.stat-card small{color:#667085}.dashboard-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.card-title-row h3{margin:0}.card-title-row span{font-size:12px;color:#667085}.dash-skill{margin:15px 0}.dash-skill-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:7px}.dash-skill-top strong{font-size:14px}.dash-skill .meter{height:9px}.journey{display:flex;flex-direction:column;gap:13px}.journey-step{display:flex;align-items:center;gap:12px;color:#667085}.journey-dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid #d9dee8;font-size:12px;background:#fff}.journey-step.done{color:#101828;font-weight:600}.journey-step.done .journey-dot{background:#eef4ff;border-color:#b7c5ff}.privacy-card{font-size:13px}.privacy-card p{color:#667085;margin:6px 0}.text-btn{color:#667085;margin-top:8px;font-size:12px}
+@media(max-width:760px){.dashboard-stats,.dashboard-grid{grid-template-columns:1fr}.hero-dash,.dashboard-head{flex-direction:column}.dashboard-head h2{font-size:28px}}
